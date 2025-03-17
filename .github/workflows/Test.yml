@@ -1,0 +1,26 @@
+name: C# Build and Syntax Check
+
+on:
+ push:
+   branches: ["main"]
+ pull_request:
+   branches: ["main"]
+
+jobs:
+ build:
+  runs-on: azure-labs
+  steps:
+  - name: Shape Area Calculator
+    uses: actions/setup-dotnet@v4
+    with: 
+      dotnet-version: "9.0"
+  - name: Setup SDK
+    uses: actions/setup-dotnet@v4
+    with: 
+      dotnet-version: "9.0"
+  - name: Restore Dependencies
+    run: dotnet restore
+  - name: Unit Tests
+    run: dotnet test
+  - name: Build
+    run: dotnet build --configuration Release
