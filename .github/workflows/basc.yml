@@ -10,7 +10,7 @@ jobs:
  build:
   runs-on: azure-labs
   steps:
-  - name: Shape Calculator
+  - name: Shape Area Calculator
     uses: actions/setup-dotnet@v4
     with: 
       dotnet-version: "9.0"
